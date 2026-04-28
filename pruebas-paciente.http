@@ -1,0 +1,42 @@
+### Crear un Paciente
+POST http://localhost:8080/api/pacientes
+Content-Type: application/json
+
+{
+  "nombre": "Max",
+  "especie": "Perro",
+  "raza": "Golden Retriever",
+  "fechaNacimiento": "2020-05-10",
+  "nombrePropietario": "Juan Pérez",
+  "telefonoPropietario": "555-1234"
+}
+
+###
+
+### Listar todos los Pacientes
+GET http://localhost:8080/api/pacientes
+
+###
+
+### Obtener Paciente por ID
+GET http://localhost:8080/api/pacientes/1
+
+###
+
+### Actualizar Paciente
+PUT http://localhost:8080/api/pacientes/1
+Content-Type: application/json
+
+{
+  "nombre": "Maximo",
+  "especie": "Perro",
+  "raza": "Golden Retriever",
+  "fechaNacimiento": "2020-05-10",
+  "nombrePropietario": "Juan Pérez",
+  "telefonoPropietario": "555-9999"
+}
+
+###
+
+### Eliminar Paciente
+DELETE http://localhost:8080/api/pacientes/1

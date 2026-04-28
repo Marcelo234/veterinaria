@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: veterinaria-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      # Creamos múltiples bases de datos al inicio (una para cada microservicio)
+      - POSTGRES_MULTIPLE_DATABASES=pacientes_db,citas_db
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      - ./init-multiple-dbs.sh:/docker-entrypoint-initdb.d/init-multiple-dbs.sh
